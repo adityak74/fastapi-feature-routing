@@ -1,5 +1,6 @@
-"""FEature Flag Routing"""
+"""Feature Flag Routing"""
 
+import inspect
 from functools import wraps
 from fastapi import HTTPException
 
@@ -36,6 +37,8 @@ def validate_flag_name(flag_name, resolver=None):
                 raise HTTPException(status_code=400, detail="Feature not enabled.")
             if not isinstance(flag_name, str):
                 raise HTTPException(status_code=400, detail="Flag name must be a string")
+            if inspect.iscoroutinefunction(func):
+                return await func(*args, **kwargs)
             return func(*args, **kwargs)
         return wrapper
     return decorator
