@@ -1,7 +1,7 @@
 """Test FastAPI routes"""
 
 from fastapi.testclient import TestClient
-from main import app
+from ff_routing_fastapi.main import app
 
 client = TestClient(app)
 
