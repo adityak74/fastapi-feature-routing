@@ -31,6 +31,7 @@ jobs:
         create-virtualenv: true
     - name: Install dependencies
       run: |
+        poetry install
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
