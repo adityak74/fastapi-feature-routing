@@ -14,3 +14,8 @@ def test_feature():
 def test_feature_flag():
     response = client.get("/feature_flag/feature_async")
     assert response.json() == {'message': 'hello'}
+
+
+def test_feature_unavailable():
+    response = client.get("/feature_flag/feature_unavailable")
+    assert response.json() == {'detail': 'Feature not enabled.'}

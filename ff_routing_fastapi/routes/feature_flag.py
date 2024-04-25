@@ -17,3 +17,9 @@ def get_feature():
 @validate_flag_name("my_platform_1", retrieve_feature_flag)
 async def get_feature_async():
     return JSONResponse(status_code=200, content={"message": "hello"})
+
+
+@router.get("/feature_unavailable")
+@validate_flag_name("my_platform_2", retrieve_feature_flag)
+def get_feature_unavailable():
+    return JSONResponse(status_code=200, content={"message": "hello"})
