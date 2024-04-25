@@ -1,16 +1,19 @@
 [tool.poetry]
-name = "ff-routing-fastapi"
+name = "ff_routing_fastapi"
 version = "0.1.0"
 description = ""
 authors = ["Aditya Karnam <akarnam37@gmail.com>"]
 readme = "README.md"
 packages = []
+#package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.110.1"
 psycopg2-binary = "^2.9.9"
 uvicorn = "^0.29.0"
+pytest = "^8.1.1"
+httpx = "^0.27.0"
 
 
 [build-system]
